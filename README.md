@@ -84,3 +84,28 @@ python ai_code_reviewer_final.py
 🧠 Model
 Uses CodeLlama via Ollama API (localhost:11434)
 ________________________________________
+
+How to Run the AI Code Review Assistant
+
+1)Start Ollama Server
+   Open a terminal (Command Prompt, PowerShell, or Terminal).
+   Type:
+   
+      ollama server
+
+   You will see a long output in the terminal—this means the Ollama server is running.
+   Minimize the terminal; don’t close it.
+   
+2) Open the Code Review Interface
+   Launch the Python GUI application.
+   In the interface, click Browse to select the folder containing your code files.
+   
+3) Run AI Review
+   
+   Click the Run AI Review button.
+   Wait patiently while the assistant analyzes your code. The processing time depends on the number of files and their size.
+   
+4) View Suggestions
+   Once the review is complete, you’ll see:
+   Suggested improvements
+   Corrected or optimized code snippets
