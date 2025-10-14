@@ -85,7 +85,7 @@ python ai_code_reviewer_final.py
 Uses CodeLlama via Ollama API (localhost:11434)
 ________________________________________
 
-How to Run the AI Code Review Assistant
+How to Run the AI Code Review Assistant PROPERLY
 
 1)Start Ollama Server
    Open a terminal (Command Prompt, PowerShell, or Terminal).
