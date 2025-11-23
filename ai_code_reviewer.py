@@ -15,7 +15,7 @@ class CodeReviewApp:
         self.stop_requested = False
 
         # --- GUI ---
-        tk.Label(root, text="1️⃣ Select a folder containing programming files:").pack(pady=5)
+        tk.Label(root, text="1️ Select a folder containing programming files:").pack(pady=5)
         tk.Button(root, text="Browse Folder", command=self.browse_folder).pack()
 
         tk.Label(root, textvariable=self.folder_path, fg="blue").pack(pady=5)
@@ -33,7 +33,7 @@ class CodeReviewApp:
 
     def stop_review(self):
         self.stop_requested = True
-        self.output.insert(tk.END, "\n🟥 Review stopped by user.\n")
+        self.output.insert(tk.END, "\n Review stopped by user.\n")
         self.output.see(tk.END)
 
     def start_review(self):
@@ -60,7 +60,7 @@ class CodeReviewApp:
         ]
 
         if not all_files:
-            self.output.insert(tk.END, "⚠️ No supported files found.\n")
+            self.output.insert(tk.END, " No supported files found.\n")
             return
 
         for file_path in all_files:
@@ -104,19 +104,19 @@ Code:
                         review_text += line.decode("utf-8")
 
                 # --- Display review + corrected code ---
-                self.output.insert(tk.END, f"🧠 Review & Corrected Code for {file_name}:\n{review_text.strip()}\n\n")
-                self.output.insert(tk.END, f"✅ Done reviewing {file_name}\n")
+                self.output.insert(tk.END, f" Review & Corrected Code for {file_name}:\n{review_text.strip()}\n\n")
+                self.output.insert(tk.END, f" Done reviewing {file_name}\n")
                 self.output.see(tk.END)
                 self.root.update_idletasks()
 
             except Exception as e:
-                self.output.insert(tk.END, f"❌ Error reviewing {file_name}: {str(e)}\n")
+                self.output.insert(tk.END, f" Error reviewing {file_name}: {str(e)}\n")
                 self.output.see(tk.END)
 
         if not self.stop_requested:
-            self.output.insert(tk.END, "\n🎉 All files reviewed successfully!\n")
+            self.output.insert(tk.END, "\n All files reviewed successfully!\n")
         else:
-            self.output.insert(tk.END, "\n🟥 Review stopped before completion.\n")
+            self.output.insert(tk.END, "\n Review stopped before completion.\n")
 
         self.output.see(tk.END)
 
@@ -125,3 +125,4 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = CodeReviewApp(root)
     root.mainloop()
+
